@@ -6,6 +6,14 @@
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 		<UseWindowsForms>true</UseWindowsForms>
 		<ImplicitUsings>disable</ImplicitUsings>
+		<Description>Librería de utilidades para aplicaciones Windows Forms: extensiones y helpers para controles, manejo de errores, generación de contraseñas, integración de logging y más.</Description>
+		<Company>velocist</Company>
+		<Authors>velocist</Authors>
+		<Copyright>2025</Copyright>
+		<PackageIcon>ImageCCSoft.png</PackageIcon>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<RepositoryUrl>https://github.com/velocist/velocist.WinForms</RepositoryUrl>
+		<Title>Librería de utilidades para aplicaciones Windows Forms</Title>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -41,6 +49,14 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Update="ImageCCSoft.png">
+	    <PackagePath>\</PackagePath>
+	    <Pack>True</Pack>
+	  </None>
+	  <None Update="README.md">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
 	  <None Update="Settings\log4net.config">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </None>
