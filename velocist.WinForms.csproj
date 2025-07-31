@@ -2,7 +2,7 @@
 
 	<PropertyGroup>
 		<TargetFramework>net9.0-windows7.0</TargetFramework>
-		<Configurations>Debug;Release;Test;Dev</Configurations>
+		<Configurations>Debug;Release</Configurations>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 		<UseWindowsForms>true</UseWindowsForms>
 		<ImplicitUsings>disable</ImplicitUsings>
@@ -24,24 +24,16 @@
 	  <NoWarn>1701;1702;1591</NoWarn>
 	</PropertyGroup>
 
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Test|AnyCPU'">
-	  <NoWarn>1701;1702;1591</NoWarn>
-	</PropertyGroup>
-
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dev|AnyCPU'">
-	  <NoWarn>1701;1702;1591</NoWarn>
-	</PropertyGroup>
-
 	<ItemGroup>
 	  <Compile Remove="ColumnStyleHelper.cs" />
 	  <Compile Remove="Strings.cs" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="9.0.6" />
+	  <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="9.0.7" />
 	  <PackageReference Include="Microsoft.Extensions.Logging.Log4Net.AspNetCore" Version="8.0.0" />
-	  <PackageReference Include="System.Configuration.ConfigurationManager" Version="9.0.6" />
-	  <PackageReference Include="System.Diagnostics.PerformanceCounter" Version="9.0.6" />
+	  <PackageReference Include="System.Configuration.ConfigurationManager" Version="9.0.7" />
+	  <PackageReference Include="System.Diagnostics.PerformanceCounter" Version="9.0.7" />
 	</ItemGroup>
 
 	<ItemGroup>
