@@ -1,5 +1,4 @@
-﻿using velocist.Services.Reflection;
-
+﻿
 namespace velocist.WinForms.DataGridViewControl {
 
 	/// <summary>

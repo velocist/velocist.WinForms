@@ -1,4 +1,5 @@
-﻿using velocist.Services.Extensions;
+﻿using velocist.Utilities.Extensions;
+using velocist.Utilities.Types;
 using velocist.WinForms.DataTableControl;
 
 namespace velocist.WinForms.ComboBoxControl {

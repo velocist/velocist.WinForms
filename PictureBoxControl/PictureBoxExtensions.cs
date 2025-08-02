@@ -1,4 +1,6 @@
-﻿namespace velocist.WinForms.PictureBoxControl {
+﻿using velocist.Utilities.Helpers;
+
+namespace velocist.WinForms.PictureBoxControl {
 
 	/// <summary>
 	/// PictureBox extensions

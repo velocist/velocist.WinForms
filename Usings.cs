@@ -8,4 +8,4 @@ global using System.Linq;
 global using System.Threading;
 global using System.Windows.Forms;
 global using velocist.Services.Helpers;
-global using velocist.Services.Types;
+global using velocist.Utilities.Types;

@@ -37,6 +37,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<ProjectReference Include="..\velocist.Security\velocist.Security.csproj" />
 		<ProjectReference Include="..\velocist.Services\velocist.Services.csproj" />
 	</ItemGroup>
 

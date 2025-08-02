@@ -1,6 +1,4 @@
-﻿using velocist.Services.Crypto;
-
-namespace velocist.WinForms {
+﻿namespace velocist.WinForms {
 
 	/// <summary>
 	/// Class for generates passwords
