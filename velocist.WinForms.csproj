@@ -30,15 +30,20 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="9.0.7" />
+	  <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="9.0.8" />
 	  <PackageReference Include="Microsoft.Extensions.Logging.Log4Net.AspNetCore" Version="8.0.0" />
-	  <PackageReference Include="System.Configuration.ConfigurationManager" Version="9.0.7" />
-	  <PackageReference Include="System.Diagnostics.PerformanceCounter" Version="9.0.7" />
+	  <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+	  <PackageReference Include="System.Configuration.ConfigurationManager" Version="9.0.8" />
+	  <PackageReference Include="System.Diagnostics.PerformanceCounter" Version="9.0.8" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<ProjectReference Include="..\velocist.Security\velocist.Security.csproj" />
+		<ProjectReference Include="..\velocist.Utilities\velocist.Utilities.csproj" />
 		<ProjectReference Include="..\velocist.Services\velocist.Services.csproj" />
+		<ProjectReference Include="..\velocist.Reflection\velocist.Reflection.csproj" />
+		<ProjectReference Include="..\velocist.Serialization\velocist.Serialization.csproj" />
+		<ProjectReference Include="..\velocist.LogService\velocist.LogService.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
