@@ -1,27 +1,36 @@
 ﻿using System.IO;
 using System.Text;
 
-namespace velocist.WinForms.TextBoxControl {
+namespace velocist.WinForms.TextBoxControl;
 
 
-	public class TextBoxWriter : TextWriter {
-		private TextBox _textBox;
+/// <summary>
+/// TextWriter implementation that writes into a WinForms TextBox control.
+/// </summary>
+public class TextBoxWriter : TextWriter {
+	private TextBox _textBox;
 
-		public TextBoxWriter(TextBox textBox) {
-			//if (textBox == null)
-			//	textBox = new TextBox();
+	/// <summary>
+	/// Initializes a new instance of <see cref="TextBoxWriter"/>.
+	/// </summary>
+	/// <param name="textBox">Target TextBox control.</param>
+	public TextBoxWriter(TextBox textBox) {
+		//if (textBox == null)
+		//	textBox = new TextBox();
 
-			_textBox = textBox;
-		}
-
-		public override void Write(char value) {
-			_textBox.Invoke(new Action(() => _textBox.AppendText(value.ToString())));
-		}
-
-		public override void Write(string value) {
-			_textBox.Invoke(new Action(() => _textBox.AppendText($"{value}")));
-		}
-
-		public override Encoding Encoding => Encoding.UTF8;
+		_textBox = textBox;
 	}
+
+	/// <inheritdoc/>
+	public override void Write(char value) {
+		_textBox.Invoke(new Action(() => _textBox.AppendText(value.ToString())));
+	}
+
+	/// <inheritdoc/>
+	public override void Write(string value) {
+		_textBox.Invoke(new Action(() => _textBox.AppendText($"{value}")));
+	}
+
+	/// <inheritdoc/>
+	public override Encoding Encoding => Encoding.UTF8;
 }

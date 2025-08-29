@@ -1,66 +1,63 @@
-﻿using velocist.Utilities.Extensions;
-using velocist.Utilities.Types;
-using velocist.WinForms.DataTableControl;
+﻿using velocist.WinForms.DataTableControl;
 
-namespace velocist.WinForms.ComboBoxControl {
+namespace velocist.WinForms.ComboBoxControl;
+
+/// <summary>
+/// the utilities class for the typed common component
+/// </summary>
+public static class ComboBoxExtension {
 
 	/// <summary>
-	/// the utilities class for the typed common component
+	/// Loads the combo.
 	/// </summary>
-	public static class ComboBoxExtension {
+	/// <param name="combo">The combo.</param>
+	/// <param name="valueMember">The value member.</param>
+	/// <param name="displayMember">The display member.</param>
+	/// <param name="dataSource">The data source.</param>
+	/// <param name="dt">The dt.</param>
+	/// <param name="stringCompleteAux">The string complete aux.</param>
+	/// <param name="selectedIdex">The selected idex.</param>
+	public static ComboBox LoadCombo<TModel>(this ComboBox combo, string valueMember, string displayMember, IEnumerable<TModel> dataSource, DataTable dt = null, string stringCompleteAux = null, int selectedIdex = 0) {
+		try {
+			combo.DataSource = dataSource;
+			combo.ValueMember = valueMember;
+			combo.DisplayMember = displayMember;
+			if (selectedIdex != 0)
+				combo.SelectedIndex = selectedIdex;
 
-		/// <summary>
-		/// Loads the combo.
-		/// </summary>
-		/// <param name="combo">The combo.</param>
-		/// <param name="valueMember">The value member.</param>
-		/// <param name="displayMember">The display member.</param>
-		/// <param name="dataSource">The data source.</param>
-		/// <param name="dt">The dt.</param>
-		/// <param name="stringCompleteAux">The string complete aux.</param>
-		/// <param name="selectedIdex">The selected idex.</param>
-		public static ComboBox LoadCombo<TModel>(this ComboBox combo, string valueMember, string displayMember, IEnumerable<TModel> dataSource, DataTable dt = null, string stringCompleteAux = null, int selectedIdex = 0) {
-			try {
-				combo.DataSource = dataSource;
-				combo.ValueMember = valueMember;
-				combo.DisplayMember = displayMember;
-				if (selectedIdex != 0)
-					combo.SelectedIndex = selectedIdex;
+			if (dt != null) {
+				if (stringCompleteAux != null && stringCompleteAux.Length > 0)
+					combo.AutoCompleteCustomSource = dt.Autocomplete(displayMember, stringCompleteAux);
+				else
+					combo.AutoCompleteCustomSource = dt.Autocomplete(displayMember, null);
 
-				if (dt != null) {
-					if (stringCompleteAux != null && stringCompleteAux.Length > 0)
-						combo.AutoCompleteCustomSource = dt.Autocomplete(displayMember, stringCompleteAux);
-					else
-						combo.AutoCompleteCustomSource = dt.Autocomplete(displayMember, null);
-
-					combo.AutoCompleteMode = AutoCompleteMode.Suggest;
-					combo.AutoCompleteSource = AutoCompleteSource.CustomSource;
-				}
-
-				return combo;
-			} catch (Exception ex) {
-				throw new Exception(ErrorCodesId.NotLoaded.ToDescription(), ex);
+				combo.AutoCompleteMode = AutoCompleteMode.Suggest;
+				combo.AutoCompleteSource = AutoCompleteSource.CustomSource;
 			}
+
+			return combo;
+		} catch (Exception ex) {
+			throw new Exception(ErrorCodesId.NotLoaded.ToDescription(), ex);
 		}
+	}
 
-		/// <summary>
-		/// Autocompletes the ComboBox.
-		/// </summary>
-		/// <param name="combobox">The combobox.</param>
-		/// <param name="stringComplete">The string complete.</param>
-		/// <param name="dt">The dt.</param>
-		/// <exception cref="Exception"></exception>
-		public static void Autocomplete(this ComboBox combobox, string stringComplete, DataTable dt) {
-			try {
-				if (dt != null) {
-					combobox.AutoCompleteCustomSource = dt.Autocomplete(stringComplete, null);
-					combobox.AutoCompleteMode = AutoCompleteMode.Suggest;
-					combobox.AutoCompleteSource = AutoCompleteSource.CustomSource;
-				}
-			} catch (Exception ex) {
-				Trace.WriteLine(ex);
-				throw;
+	/// <summary>
+	/// Autocompletes the ComboBox.
+	/// </summary>
+	/// <param name="combobox">The combobox.</param>
+	/// <param name="stringComplete">The string complete.</param>
+	/// <param name="dt">The dt.</param>
+	/// <exception cref="Exception"></exception>
+	public static void Autocomplete(this ComboBox combobox, string stringComplete, DataTable dt) {
+		try {
+			if (dt != null) {
+				combobox.AutoCompleteCustomSource = dt.Autocomplete(stringComplete, null);
+				combobox.AutoCompleteMode = AutoCompleteMode.Suggest;
+				combobox.AutoCompleteSource = AutoCompleteSource.CustomSource;
 			}
+		} catch (Exception ex) {
+			Trace.WriteLine(ex);
+			throw;
 		}
 	}
 }

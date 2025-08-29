@@ -1,63 +1,63 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
-	<PropertyGroup>
-		<TargetFramework>net9.0-windows7.0</TargetFramework>
-		<Configurations>Debug;Release</Configurations>
-		<GenerateDocumentationFile>True</GenerateDocumentationFile>
-		<UseWindowsForms>true</UseWindowsForms>
-		<ImplicitUsings>disable</ImplicitUsings>
-		<Description>Librería de utilidades para aplicaciones Windows Forms: extensiones y helpers para controles, manejo de errores, generación de contraseñas, integración de logging y más.</Description>
-		<Company>velocist</Company>
-		<Authors>velocist</Authors>
-		<Copyright>2025</Copyright>
-		<PackageIcon>ImageCCSoft.png</PackageIcon>
-		<PackageReadmeFile>README.md</PackageReadmeFile>
-		<RepositoryUrl>https://github.com/velocist/velocist.WinForms</RepositoryUrl>
-		<Title>Librería de utilidades para aplicaciones Windows Forms</Title>
-	</PropertyGroup>
-
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-	  <NoWarn>1701;1702;1591</NoWarn>
-	</PropertyGroup>
-
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-	  <NoWarn>1701;1702;1591</NoWarn>
-	</PropertyGroup>
-
-	<ItemGroup>
-	  <Compile Remove="ColumnStyleHelper.cs" />
-	  <Compile Remove="Strings.cs" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="9.0.8" />
-	  <PackageReference Include="Microsoft.Extensions.Logging.Log4Net.AspNetCore" Version="8.0.0" />
-	  <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-	  <PackageReference Include="System.Configuration.ConfigurationManager" Version="9.0.8" />
-	  <PackageReference Include="System.Diagnostics.PerformanceCounter" Version="9.0.8" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<ProjectReference Include="..\velocist.Security\velocist.Security.csproj" />
-		<ProjectReference Include="..\velocist.Utilities\velocist.Utilities.csproj" />
-		<ProjectReference Include="..\velocist.Services\velocist.Services.csproj" />
-		<ProjectReference Include="..\velocist.Reflection\velocist.Reflection.csproj" />
-		<ProjectReference Include="..\velocist.Serialization\velocist.Serialization.csproj" />
-		<ProjectReference Include="..\velocist.LogService\velocist.LogService.csproj" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <None Update="ImageCCSoft.png">
-	    <PackagePath>\</PackagePath>
-	    <Pack>True</Pack>
-	  </None>
-	  <None Update="README.md">
-	    <Pack>True</Pack>
-	    <PackagePath>\</PackagePath>
-	  </None>
-	  <None Update="Settings\log4net.config">
-	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	  </None>
-	</ItemGroup>
-
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net9.0-windows7.0</TargetFramework>
+    <Configurations>Debug;Release</Configurations>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <Title>Libreria de utilidades para aplicaciones Windows Forms</Title>
+    <Description>Libreria de utilidades para aplicaciones Windows Forms: extensiones y helpers para controles, manejo de errores, generacion de passwords, integracion de logging y mas.</Description>
+    <RepositoryUrl>https://github.com/velocist/velocist.WinForms</RepositoryUrl>
+    <PackageIcon>ImageCCSoft.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <Company>velocist</Company>
+    <Authors>velocist</Authors>
+    <Copyright>2025</Copyright>
+    <PackageOutputPath>F:\velocist.Svr\LocalPackages</PackageOutputPath>
+    <Version>2.0.4</Version>
+    <FileVersion>2.0.4.229</FileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>1701;1702;1591</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <NoWarn>1701;1702;1591</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="ColumnStyleHelper.cs" />
+    <Compile Remove="Strings.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="9.0.8" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Log4Net.AspNetCore" Version="8.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="9.0.8" />
+    <PackageReference Include="System.Diagnostics.PerformanceCounter" Version="9.0.8" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\velocist.Security\velocist.Security.csproj" />
+    <ProjectReference Include="..\velocist.Utilities\velocist.Utilities.csproj" />
+    <ProjectReference Include="..\velocist.Services\velocist.Services.csproj" />
+    <ProjectReference Include="..\velocist.Reflection\velocist.Reflection.csproj" />
+    <ProjectReference Include="..\velocist.Serialization\velocist.Serialization.csproj" />
+    <ProjectReference Include="..\velocist.LogService\velocist.LogService.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="ImageCCSoft.png">
+      <PackagePath>\</PackagePath>
+      <Pack>True</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="LICENSE.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Settings\log4net.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 </Project>
